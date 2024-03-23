@@ -13,9 +13,30 @@ export default function Home() {
   const googleProvider = new GoogleAuthProvider();
   const handleGoogleSignIn = () => {
     signInWithPopup(auth,googleProvider).then((res)=>{
+      toast.success('Google Sign In Successful', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+        });
       router.push("/success");
     }).catch((err)=>{
-      alert("something wrong");
+      toast.error('Something went wrong while Signing In', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+        });
     })
   }
   return (
