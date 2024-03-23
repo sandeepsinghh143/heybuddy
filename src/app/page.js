@@ -7,7 +7,7 @@ import Link from "next/link";
 import { auth } from "./firebase";
 import {signInWithPopup, GoogleAuthProvider} from "firebase/auth"
 import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
+import { Bounce, toast } from "react-toastify";
 
 export default function Home() {
   const router = useRouter();
